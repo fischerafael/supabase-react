@@ -1,6 +1,7 @@
 import { Button, Flex, Input, Text, VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../db/config";
+import { useGetSession } from "../hooks/useGetSession";
 
 export const PageLogin = () => {
   const [isLoading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ export const PageLogin = () => {
     }
   };
 
-  console.log("EMAIL", email);
+  const {} = useGetSession();
 
   return (
     <Flex bg="gray.50" w="100vw" h="100vh" justify="center" align="center">
