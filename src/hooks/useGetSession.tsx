@@ -7,8 +7,6 @@ export const useGetSession = () => {
   const [isLoading, setLoading] = useState(true);
   const [session, setSession] = useState<ISession>({} as ISession);
 
-  console.log(session);
-
   const handleGetSession = async () => {
     try {
       setLoading(true);
@@ -34,7 +32,9 @@ export const useGetSession = () => {
     handleGetSession();
   }, []);
 
-  return {};
+  return {
+    session,
+  };
 };
 
 interface ISession {
